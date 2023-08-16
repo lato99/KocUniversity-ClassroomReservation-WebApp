@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Admin Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="../static/admin_dashboard.css">
+</head>
+
+<h1>Admin Dashboard</h1>
+
+
+<div class="container">
+	<div class="group">
+		<form action="/seeTheUsers" method="GET">     
+			<button>See, Edit or Delete Users</button>
+		</form>
+		<form action="/seeUserStatistics" method="GET">
+			<button>See User Statistics</button>
+		</form>
+		<form action="/exam_schedules">
+			<button onclick="location.href='/exam_schedules';" name="exam-schedules" value="exam-schedules"
+				id="exam-schedules">
+				View Exam Schedules
+			</button>
+		</form>
+
+	</div>
+
+	<div class="group">
+		<form action="/seeTheReservations" method="GET">
+			<button>See, Edit or Delete Reservations</button>
+		</form>
+		<form action="/seeReservationStatistics" method="GET">
+			<button>See Reservation Statistics</button>
+		</form>
+		<form action="/viewInsidesOfClassrooms" method="GET">
+				<button>View Insides of Classrooms</button>
+		</form>
+	</div>
+
+	<div class="group">
+		<form action="/seeITReports" method="GET">
+			<button>See, Edit or Delete IT Reports</button>
+		</form>
+		<form action="/get_it_report_statistics_for_admin" method="GET">
+			<button>See Statistics of IT Reports</button>
+		</form>
+		<form action="/getCreateNewsScreen" method="GET">
+			<button>Create News</button>
+		</form>
+	</div>
+
+
+	<div class="group">
+		<form action="/class_schedules">
+			<button onclick="location.href='/class_schedules';" name="class-schedules" value="class-schedules"
+				id="class-schedules">
+				View Course Schedules
+			</button>
+		</form>
+
+	</div>
+
+
+	
+
+</div>
+
+</body>
+
+</html>

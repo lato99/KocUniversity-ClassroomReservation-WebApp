@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="../static/viewMap.js"></script>
+  <link rel="stylesheet" type="text/css" href="../static/viewMap.css">
+  <title>School Map View</title>
+</head>
+<body>
+  <div class="dashboards">
+    {% if 'role' in session %} {% if session['role'] == 'teacher' %}
+    <form action="teacher/dashboard">
+      <button class="dashboard" type="submit">Go To Teacher Dashboard</button>
+    </form>
+    {% elif session['role'] == 'it_staff' %}
+    <form action="it_staff/dashboard">
+      <button class="dashboard" type="submit">Go To IT Staff Dashboard</button>
+    </form>
+    {% elif session['role'] == 'student' %}
+    <form action="/redirect_student_dashboard">
+      <button class="dashboard" type="submit">Go To Student Dashboard</button>
+    </form>
+    {% elif session['role'] == 'admin' %}
+    <form action="admin/dashboard">
+      <button class="dashboard" type="submit">Go To Admin Dashboard</button>
+    </form>
+    {% endif %} {% endif %}
+  </div>
+  <img src="/static/images/map3d.png" alt="" id="map-image">
+  <br>
+  <div class="classButtons">
+    <form action="/openSOS"><button onmouseover="changeImageURLSOS()" class="building-button dorms">SOS
+        BUILDING</button>
+    </form>
+    <form action="/openCASE"><button onmouseover="changeImageURLCASE()" class="building-button dorms">CASE
+        BUILDING</button>
+    </form>
+    <form action="/openSTD"> <button onmouseover="changeImageURLSTUDENTCENTER()" class="building-button dorms">STUDENT
+        CENTER</button>
+    </form>
+    <form action="/openSCI"> <button onmouseover="changeImageURLSCIENCE()" class="building-button dorms">SCIENCE
+        BUILDING</button>
+    </form>
+    <form action="/openLIB"> <button onmouseover="changeImageURLLIBRARY()" class="building-button dorms">LIBRARY
+        BUILDING</button>
+    </form>
+    <form action="/openELC"><button onmouseover="changeImageURLELC()" class="building-button dorms">ELC
+        BUILDING</button>
+    </form>
+    <form action="">
+      <button onmouseover="changeImageURLDORMS()" class="building-button dorms">DORMS BUILDING</button>
+    </form>
+    <form action="/openSNAA"><button onmouseover="changeImageURLSNAA()" class="building-button dorms">SNA A
+        BUILDING</button>
+    </form>
+    <form action="/openSNAB"> <button onmouseover="changeImageURLSNAB()" class="building-button dorms">SNA B
+        BUILDING</button>
+    </form>
+    <form action="/openENG"><button onmouseover="changeImageURLENG()" class="building-button dorms">ENG
+        BUILDING</button>
+    </form>
+  </div>
+</body>
+</html>

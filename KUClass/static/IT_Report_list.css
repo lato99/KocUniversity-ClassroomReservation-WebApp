@@ -1,0 +1,126 @@
+body {
+  background-color: #f6d7dd;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-image: url("../static/images/classroom.png");
+  background-size: cover;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  margin: 30px 0 50px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  margin: 20px 0;
+  background-color: #ab6da7;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.content {
+  padding: 20px;
+  width: 80%;
+  box-sizing: border-box;
+  background-color: lightblue;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+button.edit-report-button {
+  align-self: flex-start;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: blue;
+  border-color: aquamarine;
+  background-color: #ab6da7;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: none;
+  position: left;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.box {
+  background-color: lightgoldenrodyellow;
+  margin: 0 10% 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+button#it-staff-button {
+  margin: 20px auto;
+  display: block;
+  max-width: 400px;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  color: blue;
+  border-color: aquamarine;
+  background-color: #ab6da7;
+  border-radius: 5px;
+  padding: 20px;
+  width: 400px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+#it-staff-button:hover {
+  background-color: #ff8692;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.edit-report-button.button:hover {
+  background-color: #ff8692;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+form button {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #ab6da7;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+form button:hover {
+  background-color: #ff8692;
+  transform: scale(1.05);
+}

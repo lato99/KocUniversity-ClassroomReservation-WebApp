@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: goldenrod;
+  margin: 0;
+  padding: 20px;
+}
+
+body:hover {
+  background-color: aquamarine;
+  background-image: url("../static/images/classroom.png");
+  background-size: cover;
+}
+
+h1 {
+  text-align: center;
+  color: black;
+  background-color: lightseagreen;
+  margin-bottom: 20px;
+}
+
+.users {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.users th,
+.users td {
+  padding: 10px 15px;
+  text-align: left;
+  border-bottom: 2px solid #000;
+  border-right: 2px solid #000;
+}
+
+.users th {
+  background-color: yellow;
+  color: black;
+  border-bottom-width: 2px;
+}
+
+.users td {
+  background-color: lightblue;
+  color: black;
+}
+
+.users td:hover {
+  background-color: darkblue;
+  color: white;
+  cursor: pointer;
+}
+
+.users td:last-child {
+  border-right: none;
+}
+
+@media screen and (max-width: 600px) {
+  .users {
+    font-size: 14px;
+  }
+
+  .users th,
+  .users td {
+    padding: 8px 10px;
+  }
+}
+
+button {
+  border-radius: 15px;
+  background-color: lightgreen;
+  color: black;
+  padding: 15px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+  background-color: lime;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  transform: scale(0.95);
+}

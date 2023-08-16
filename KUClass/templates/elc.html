@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View ELC Classrooms</title>
+    <link rel="stylesheet" type="text/css" href="../static/pagination_classroom_view.css" />
+    <script type="text/javascript" src="../static/pagination_classroom_view.js"></script>
+</head>
+<body>
+    {% if 'role' in session %} {% if session['role'] == 'teacher' %}
+    <form action="teacher/dashboard">
+        <div class="button_container">
+            <button>Go To Teacher Dashboard</button>
+        </div>
+    </form>
+    {% elif session['role'] == 'it_staff' %}
+    <form action="it_staff/dashboard">
+        <div class="button_container">
+            <button>Go To IT Staff Dashboard</button>
+        </div>
+    </form>
+    {% elif session['role'] == 'student' %}
+    <form action="/redirect_student_dashboard">
+        <div class="button_container">
+            <button>Go To Student Dashboard</button>
+        </div>
+    </form>
+    {% endif %} {% endif %}
+    <br />
+    <div class="center-container">
+        <h2>Press classroom image to reserve the classroom.</h2>
+    </div>
+    <div id="image-container">
+        <img src="../static/images/ELCB08.png" width="300" height="300"
+            onclick="redirectToReservationScreen('ELC B08', '{{ session.role }}')" name="openStudentReservationScreen"
+            value="openStudentReservationScreen" />
+        <img src="../static/images/ELCB15.png" width="300" height="300"
+            onclick="redirectToReservationScreen('ELC B15', '{{ session.role }}')" />
+        <img src="../static/images/ELCB13.png" width="300" height="300"
+            onclick="redirectToReservationScreen('ELC B13', '{{ session.role }}')" />
+        <img src="../static/images/ELCB12.png" width="300" height="300"
+            onclick="redirectToReservationScreen('ELC B12', '{{ session.role }}')" />
+        <img src="../static/images/ELCB10.png" width="300" height="300"
+            onclick="redirectToReservationScreen('ELC B10', '{{ session.role }}')" />
+        <img src="../static/images/ELCB09.png" width="300" height="300"
+            onclick="redirectToReservationScreen('ELC B09', '{{ session.role }}')" />
+        <img src="../static/images/ELCB07.png" width="300" height="300"
+            onclick="redirectToReservationScreen('ELC B07', '{{ session.role }}')" />
+        <img src="../static/images/ELCB06.png" width="300" height="300"
+            onclick="redirectToReservationScreen('ELC B06', '{{ session.role }}')" />
+        <img src="../static/images/ELCB04.png" width="300" height="300"
+            onclick="redirectToReservationScreen('ELC B04', '{{ session.role }}')" />
+        <img src="../static/images/ELCB03.png" width="300" height="300"
+            onclick="redirectToReservationScreen('ELC B03', '{{ session.role }}')" />
+        <img src="../static/images/ELC115.png" width="300" height="300"
+            onclick="redirectToReservationScreen('ELC 115', '{{ session.role }}')" />
+    </div>
+    <div id="pagination">
+        <a href="#" onclick="showPage(1)">1</a>
+    </div>
+</body>
+</html>

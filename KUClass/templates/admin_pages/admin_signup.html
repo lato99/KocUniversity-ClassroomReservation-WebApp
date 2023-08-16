@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Admin Signup</title>
+    <link rel="stylesheet" type="text/css" href="../static/signup.css">
+    <script src="../../static/passwordChecker.js"></script>
+</head>
+<button onclick="location.href='/get_admin_signup_guide';" name="admin-signup-guide" value="admin-signup-guide"
+    id="admin-signup-guide">Open Admin Signup Guide</button>
+<h1>Admin Signup</h1>
+<form action="/admin/signup" autocomplete="off" method="post">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" placeholder="Please enter your username to signup" required>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Please enter your password to signup" required
+        onkeyup="checkPasswordStrength(this.value)">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Please enter your email to signup" required="email"
+        maxlength="50">
+    <br>
+    <div class="box">
+        <label class="red-label" id="lowercase-label">Lowercase</label><br>
+        <label class="red-label" id="uppercase-label">Uppercase</label><br>
+        <label class="red-label" id="letter-label">Letter</label><br>
+        <label class="red-label" id="length-label">At least 8 characters</label>
+    </div>
+    <br>
+    <input id="admin-signup-button" type="submit" value="Signup">
+
+</form>
+{% if username_taken_error %}
+<p class="error-message">{{ username_taken_error }} </p>
+<button onclick="window.location.href='/admin/login'" name="admin-login" value="admin-login" id="admin-login">Go to
+    Admin Login</button>
+{% endif %}
+{% if not_ku_error %}
+<p class="error-message">{{ not_ku_error }} </p>
+{% endif %}
+{% if email_taken_error %}
+<p class="error-message">{{ email_taken_error }} </p>
+<button onclick="window.location.href='/admin/login'" name="admin-login" value="admin-login" id="admin-login">Go to
+    Admin Login</button>
+{% endif %}
+{% if credentials_coincide_error %}
+<p class="error-message">{{credentials_coincide_error}} </p>
+{% endif %}
+{% if invalid_password_error %}
+<p class="error-message">{{ invalid_password_error}} </p>
+{% endif %}
+{% if signup_error_message %}
+<p class="error-message">{{ signup_error_message }}</p>
+<button onclick="window.location.href='/admin/login'" name="admin-login" value="admin-login" id="admin-login">Go to
+    Admin Login</button>
+{% endif %}
+</body>
+
+
+</html>

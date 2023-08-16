@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>View Science Classrooms</title>
+  <link rel="stylesheet" type="text/css" href="../static/pagination_classroom_view.css" />
+  <script type="text/javascript" src="../static/pagination_classroom_view.js"></script>
+</head>
+<body>
+  {% if 'role' in session %} {% if session['role'] == 'teacher' %}
+  <form action="teacher/dashboard">
+    <div class="button_container">
+      <button>Go To Teacher Dashboard</button>
+    </div>
+  </form>
+  {% elif session['role'] == 'it_staff' %}
+  <form action="it_staff/dashboard">
+    <div class="button_container">
+      <button>Go To IT Staff Dashboard</button>
+    </div>
+  </form>
+  {% elif session['role'] == 'student' %}
+  <form action="/redirect_student_dashboard">
+    <div class="button_container">
+      <button>Go To Student Dashboard</button>
+    </div>
+  </form>
+  {% endif %} {% endif %}
+  <br />
+  <div class="center-container">
+    <h2>Press classroom image to reserve the classroom.</h2>
+  </div>
+  <div id="image-container">
+    <img src="../static/images/SCIZ42.png" width="300" height="300"
+      onclick="redirectToReservationScreen('SCI Z42', '{{ session.role }}')" name="openStudentReservationScreen"
+      value="openStudentReservationScreen" />
+    <img src="../static/images/SCIZ32.png" width="300" height="300"
+      onclick="redirectToReservationScreen('SCI Z32', '{{ session.role }}')" name="openStudentReservationScreen"
+      value="openStudentReservationScreen" />
+    <img src="../static/images/SCIZ29.png" width="300" height="300"
+      onclick="redirectToReservationScreen('SCI Z29', '{{ session.role }}')" name="openStudentReservationScreen"
+      value="openStudentReservationScreen" />
+    <img src="../static/images/SCIZ24.png" width="300" height="300"
+      onclick="redirectToReservationScreen('SCI Z24', '{{ session.role }}')" name="openStudentReservationScreen"
+      value="openStudentReservationScreen" />
+    <img src="../static/images/SCIZ09.png" width="300" height="300"
+      onclick="redirectToReservationScreen('SCI Z09', '{{ session.role }}')" name="openStudentReservationScreen"
+      value="openStudentReservationScreen" />
+    <img src="../static/images/SCIZ08.png" width="300" height="300"
+      onclick="redirectToReservationScreen('SCI Z08', '{{ session.role }}')" name="openStudentReservationScreen"
+      value="openStudentReservationScreen" />
+    <img src="../static/images/SCIZ07.png" width="300" height="300"
+      onclick="redirectToReservationScreen('SCI Z07', '{{ session.role }}')" name="openStudentReservationScreen"
+      value="openStudentReservationScreen" />
+    <img src="../static/images/SCIZ06.png" width="300" height="300"
+      onclick="redirectToReservationScreen('SCI Z06', '{{ session.role }}')" name="openStudentReservationScreen"
+      value="openStudentReservationScreen" />
+    <img src="../static/images/SCI129.png" width="300" height="300"
+      onclick="redirectToReservationScreen('SCI 129', '{{ session.role }}')" name="openStudentReservationScreen"
+      value="openStudentReservationScreen" />
+    <img src="../static/images/SCI126.png" width="300" height="300"
+      onclick="redirectToReservationScreen('SCI 126', '{{ session.role }}')" name="openStudentReservationScreen"
+      value="openStudentReservationScreen" />
+    <img src="../static/images/SCI125.png" width="300" height="300"
+      onclick="redirectToReservationScreen('SCI 125', '{{ session.role }}')" name="openStudentReservationScreen"
+      value="openStudentReservationScreen" />
+    <img src="../static/images/SCI103.png" width="300" height="300"
+      onclick="redirectToReservationScreen('SCI 103', '{{ session.role }}')" name="openStudentReservationScreen"
+      value="openStudentReservationScreen" />
+  </div>
+  <div id="pagination">
+    <a href="#" onclick="showPage(1)">1</a>
+    <a href="#" onclick="showPage(2)">2</a>
+    <a href="#" onclick="showPage(3)">3</a>
+  </div>
+</body>
+</html>

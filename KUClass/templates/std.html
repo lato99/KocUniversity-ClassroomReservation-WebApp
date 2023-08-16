@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Student Center Classrooms</title>
+    <link rel="stylesheet" type="text/css" href="../static/pagination_classroom_view.css" />
+    <script type="text/javascript" src="../static/pagination_classroom_view.js"></script>
+</head>
+<body>
+    {% if 'role' in session %} {% if session['role'] == 'teacher' %}
+    <form action="teacher/dashboard">
+        <div class="button_container">
+            <button>Go To Teacher Dashboard</button>
+        </div>
+    </form>
+    {% elif session['role'] == 'it_staff' %}
+    <form action="it_staff/dashboard">
+        <div class="button_container">
+            <button>Go To IT Staff Dashboard</button>
+        </div>
+    </form>
+    {% elif session['role'] == 'student' %}
+    <form action="/redirect_student_dashboard">
+        <div class="button_container">
+            <button>Go To Student Dashboard</button>
+        </div>
+    </form>
+    {% endif %} {% endif %}
+    <br />
+    <div class="center-container">
+        <h2>Press classroom image to reserve the classroom.</h2>
+    </div>
+    <div id="image-container">
+        <img src="../static/images/STD432.png" width="300" height="300"
+            onclick="redirectToReservationScreen('STD 432', '{{ session.role }}')" name="openStudentReservationScreen"
+            value="openStudentReservationScreen" />
+        <img src="../static/images/STDB336.png" width="300" height="300"
+            onclick="redirectToReservationScreen('STD B336', '{{ session.role }}')" name="openStudentReservationScreen"
+            value="openStudentReservationScreen" />
+        <img src="../static/images/STDB335.png" width="300" height="300"
+            onclick="redirectToReservationScreen('STD B335', '{{ session.role }}')" name="openStudentReservationScreen"
+            value="openStudentReservationScreen" />
+    </div>
+    <div id="pagination">
+        <a href="#" onclick="showPage(1)">1</a>
+    </div>
+</body>
+</html>

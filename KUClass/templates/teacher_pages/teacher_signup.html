@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Teacher Signup</title>
+    <link rel="stylesheet" type="text/css" href="../static/signup.css">
+	<script src="../../static/passwordChecker.js"></script>
+</head>
+<h1>Teacher Signup</h1>
+<button onclick="location.href='/get_teacher_signup_help';" name="teacher-signup-guide" value="teacher-login-guide"
+	id="teacher-signup-guide">Open Teacher Signup Guide</button>
+<form action="/teacher/signup" autocomplete="off" method="post">
+	<label for="username">Username:</label>
+	<input required type="text" id="username" placeholder="Please enter your username to signup" name="username"
+		required>
+	<label for="password">Password:</label>
+	<input type="password" id="password" name="password" placeholder="Please enter your password to signup" required
+		onkeyup="checkPasswordStrength(this.value)">
+	<label for="email">Email:</label>
+	<input required type="email" id="email" name="email" placeholder="Please enter your email address to signup"
+		required maxlength="50">
+	<div class="box" >
+		<label class="red-label" id="lowercase-label">Lowercase</label><br>
+		<label class="red-label" id="uppercase-label">Uppercase</label><br>
+		<label class="red-label" id="letter-label">Letter</label><br>
+		<label class="red-label" id="length-label">At least 8 characters</label>
+	</div>
+	<br>
+	<br>
+	<button id="teacher-signup-button" type="submit">Signup</button>
+</form>
+{% if username_taken_error %}
+<p class="error-message">{{ username_taken_error }} </p>
+<button onclick="window.location.href='/teacher/login'" name="teacher-login" value="teacher-login" id="teacher-login">Go
+	to Teacher Login</button>
+{% endif %}
+{% if not_ku_error %}
+<p class="error-message">{{ not_ku_error }} </p>
+{% endif %}
+{% if credentials_coincide_error %}
+<p class="error-message">{{ credentials_coincide_error }} </p>
+{% endif %}
+{% if email_taken_error %}
+<p class="error-message">{{ email_taken_error }} </p>
+<button onclick="window.location.href='/teacher/login'" name="teacher-login" value="teacher-login" id="teacher-login">Go
+	to Teacher Login</button>
+{% endif %}
+{% if invalid_password_error %}
+<p class="error-message">{{invalid_password_error}} </p>
+{% endif %}
+{% if signup_error_message %}
+<p class="error-message">{{ signup_error_message }}</p>
+<button onclick="window.location.href='/teacher/login'" name="teacher-login" value="teacher-login" id="teacher-login">Go
+	to Teacher Login</button>
+{% endif %}
+</body>
+
+
+</html>

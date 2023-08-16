@@ -1,0 +1,64 @@
+body {
+  background-color: beige;
+  font-family: Arial, sans-serif;
+  background-image: url("../static/images/classroom.png");
+  background-size: cover;
+}
+
+h1 {
+  color: darkgreen;
+  background-color: aqua;
+  font-weight: bold;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.IT_Report_logdb {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px auto;
+  background-color: lightpink;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.IT_Report_logdb th,
+.IT_Report_logdb td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.IT_Report_logdb th {
+  background-color: violet;
+  font-weight: bold;
+}
+
+.IT_Report_logdb tbody tr:hover {
+  background-color: cyan;
+}
+
+.IT_Report_logdb tbody td button {
+  background-color: lightgreen;
+  color: blue;
+  font-weight: bold;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.IT_Report_logdb tbody td button:hover {
+  background-color: skyblue;
+}
+
+@media only screen and (max-width: 600px) {
+  .IT_Report_logdb {
+    font-size: 12px;
+  }
+
+  .IT_Report_logdb th,
+  .IT_Report_logdb td {
+    padding: 8px;
+  }
+}

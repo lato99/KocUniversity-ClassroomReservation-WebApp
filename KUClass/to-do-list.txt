@@ -1,0 +1,6 @@
+Reservation System
+    1-) Reservation join, başkasının reservation una katılma
+    2-) map te seçilen binaya göre search and filter edilmiş bi şekilde sınıfları görmea
+
+Chat & News 
+    1-) UI

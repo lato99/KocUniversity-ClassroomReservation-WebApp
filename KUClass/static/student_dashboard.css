@@ -1,0 +1,166 @@
+body {
+
+  padding: 0;
+  background-color: yellowgreen;
+  background-image: url("../static/images/classroom.png");
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0, 255, 238);
+  font-family: Arial, Helvetica, sans-serif;
+
+
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification {
+  margin-right: 10px;
+}
+
+.group1,
+.group2,
+.group3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.group1,.group2
+.group3 {
+  flex-basis: calc(100% / 3);
+}
+
+.group1 {
+  flex-direction: column;
+}
+
+.group2 {
+  flex-direction: column;
+}
+.group3 {
+  flex-direction: column;
+}
+
+.group2 .buttons {
+  margin-right: 10px;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: black;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.notification .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-image: url("/static/images/notification.png");
+  background-size: cover;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 40px;
+  color: brown;
+  border: 10px;
+  width: auto;
+  align-items: center;
+}
+
+
+.buttons button {
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 70px;
+  width: 250px;
+  min-width: 250px;
+  max-width: 250px;
+  height: 90px;
+  min-height: 90px;
+  max-height: 90px;
+  border-radius: 40px;
+
+}
+
+.button.clicked,
+.button.hover,
+.form.clicked,
+.form.hover,
+.buttons button:hover {
+  transform: scale(1.05);
+  background-color: red;
+  color: red;
+}
+
+.buttons button:hover {
+  background-color: red;
+  color: white;
+}
+
+
+.news {
+  border-radius: 10px;
+  border-color: #ff0059;
+  box-shadow: #00ff62;
+}
+
+#hover_effect:hover {
+  transform: scale(1.05);
+}
+
+
+
+
+
+

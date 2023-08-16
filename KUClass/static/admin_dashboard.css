@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightblue;
+    margin: 0;
+    padding: 0;
+    background-image: url("../static/images/classroom.png");
+    background-size: cover;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+button {
+    display: block;
+    margin-bottom: 20px;
+
+    margin: 0 auto 20px auto;
+
+    width: 200px;
+    height: 50px;
+    border-radius: 240%;
+    background-color: pink;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.group {
+    flex-basis: calc(100% / 3);
+}
+
+form {
+    margin-bottom: 10px;
+}
+
+.excel-wrapper {
+    overflow-x: auto;
+  }
+  
+  table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 110%;
+  }
+  
+  td, th {
+    border: 1px solid black;
+    font-size: 11px;
+    min-width: 50px;
+    min-height: 20px;
+  }
+  
+  table colgroup col {
+    width: auto;
+  }
+
+
+button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+button:hover {
+    background-color: purple;
+    color: white;
+    transform: scale(1.10);
+}
+
+button {
+    color: black;
+}
+
+
+
+

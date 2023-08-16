@@ -1,0 +1,38 @@
+img {
+  width: 1500px;
+  height: 750px;
+  max-width: 1500px;
+  min-width: 1500px;
+  min-height: 750px;
+  max-height: 750px;
+
+}
+
+body {
+  background-color: skyblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboards {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+
+.classButtons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.classButtons form {
+  margin-right: 10px;
+
+}

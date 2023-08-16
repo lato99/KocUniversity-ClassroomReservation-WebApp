@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<header>
+    <title>Classroom Search and Filter Screen</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/classroom_filtering.css"
+    />
+    <script src="../static/classroom_filtering.js"></script>
+</header>
+
+<body>
+    <h1>Classroom Filter and Search</h1>
+    <div class="buttons_box">
+        <form action="/filteredClassrooms" method="GET">
+            <label>Classroom code:</label>&nbsp;<select id="code" name="code">
+                {% for classroom_name in classroom_names %}
+                <option name = "code">{{classroom_name}}</option>
+                {% endfor %}</select
+              >&nbsp;<input type="checkbox" name="checkbox_code" value="code"/>
+            <br />
+            <br />
+            <label>Department name:</label>
+            <select id="department" name="department">
+              {% for department in departments %}
+              <option value="{{department}}">{{department}}</option>
+              {% endfor %}</select
+            >&nbsp;<input type="checkbox" name="checkbox_department" value="department"/>
+            <br />
+            <br />
+            <label>Classroom Area:</label>
+            <select id="big_small_eq" name="operation_area">
+              <option value="&gt;">&gt;</option>
+              <option value="&lt;">&lt;</option>
+              <option value="=">=</option></select>
+            <input type="number" name="area" class="custom-input custom-input-number" min="0" placeholder="Area (m&sup2)" />&nbsp;<input
+              type="checkbox"
+              name="checkbox_area"
+              value="area"
+            />
+            <br />
+            <br />
+            <label>Seats:</label>
+            <select id="big_small_eq" name="operation_seats">
+              <option value=">">&gt;</option>
+              <option value="&lt;">&lt;</option>
+              <option value="=">=</option></select
+            >&nbsp;<input type="number" name="seats" class="custom-input custom-input-number" min="0" placeholder="Seat #" />&nbsp;<input
+              type="checkbox"
+              name="checkbox_seats"
+              value="seats"
+            />
+            <br />
+            <br />
+            <label>Board Number:</label>&nbsp;<select
+              id="big_small_eq"
+              name="operation_board_number"
+            >
+              <option value="&gt;">&gt;</option>
+              <option value="&lt;">&lt;</option>
+              <option value="=">=</option></select
+            >&nbsp;<input type="number" name="board_number" class="custom-input custom-input-number" min="0" placeholder="Board #" />&nbsp;<input
+              type="checkbox"
+              name="checkbox_board_number"
+              value="board_number"
+            />
+            <br />
+            <br />
+            <label>Projector Number:</label>
+            <select id="big_small_eq" name="operation_projector_num">
+              <option value="&gt;">&gt;</option>
+              <option value="&lt;">&lt;</option>
+              <option value="=">=</option></select>
+            <input type="number" name="projector_num" class="custom-input custom-input-number" min="0" placeholder="Projector #"/>
+            <input type="checkbox" name="checkbox_projector_num" value="projector_num"/>
+            <br />
+            <br />
+            <label>Room type:</label>&nbsp;<input
+            type="text"
+            name="room_type"
+          />&nbsp;<input type="checkbox" name="checkbox_room_type" value="room_type"/>
+            <br />
+            <br />
+            <label>Connections:</label>&nbsp;<input
+              type="text"
+              name="connections"
+            />&nbsp;<input type="checkbox" name="checkbox_connections" value="connections"/>
+            <br />
+            <br />
+            <label>Panopto Capture:</label>&nbsp;<input
+              type="text"
+              name="panopto_capture"
+            />&nbsp;<input type="checkbox" name="checkbox_panopto_capture" value="panopto_capture"/>
+            <br />
+            <br />
+            <label>Outlets for Students:</label>&nbsp;
+            <select id="outlets_for_students" name="outlets_for_students">
+              <option value="yes">Yes</option>
+              <option value="no">No</option></select>&nbsp;
+            <input type="checkbox" name="checkbox_outlets_for_students" value="outlets_for_students"/>
+            <br />
+            <br />
+            <label>Available for: </label>
+            <input type="date" name="date" id="date" class="custom-input" />
+            <input type="time" name="start_time" id="start_time" class="custom-input" />
+            <input type="number" id="duration" name="duration" step="1" min="0" max="999" placeholder="Duration (min)" class="custom-input custom-input-number"/>
+            <input type="checkbox" name="checkbox_vacant" value="vacant"/>
+
+            <br />
+            <br />
+            <button>Show classes</button>
+            <button type="reset">Remove filters</button>
+            <br><br>
+          </form>
+
+          {% if 'role' in session %} {% if session['role'] == 'teacher' %}
+          <form action="teacher/dashboard">
+            <button>Go To Teacher Dashboard</button>
+          </form>
+          {% elif session['role'] == 'it_staff' %}
+          <form action="it_staff/dashboard">
+            <button>Go To IT Staff Dashboard</button>
+          </form>
+          {% elif session['role'] == 'student' %}
+          <form action="redirect_student_dashboard">
+            <button>Go To Student Dashboard</button>
+          </form>
+          {% endif %} {% endif %}
+          
+        </div>
+</body>
+</html>
+

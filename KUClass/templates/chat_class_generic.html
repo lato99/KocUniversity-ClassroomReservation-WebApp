@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/chat_with_history.css">
+    <title>Class-Specific Chat Room</title>
+</head>
+
+<body>
+    <h1> Chat for: {{classroom}}</h1>
+    <div class="chat-history">
+        {% for row in rows %}
+        {% if row[3] and row[4]%}
+        <p class="p1">{{row[3]}}: {{row[4]}}</p>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+    <div>
+        <form action="/send_chat_message" method="POST">
+            <input type="hidden" name="classroom" value="{{classroom}}">
+            <input type="text" name="message" id="message">
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+bcrypt
+deprecation
+pandas
+flask
+flask_socketio
+flask_rbac
+openpyxl
+matplotlib
+pandas
+openpyxl
+numpy
+pytz
+flask_socketio

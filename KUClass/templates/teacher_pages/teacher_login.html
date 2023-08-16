@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Teacher Login</title>
+	<link rel="stylesheet" type="text/css" href="../static/login.css">
+</head>
+<h1>Teacher Login</h1>
+<button onclick="location.href='/get_teacher_login_help';" name="teacher-login-guide" value="teacher-login-guide"
+	id="teacher-login-guide">Open Teacher Login Guide</button>
+<form action="/teacher/login" autocomplete="off" method="post">
+	<label for="username">Username</label>
+	<input required type="text" id="username" placeholder="Please enter your username to login" name="username">
+	<label for="password">Password</label>
+	<input required type="password" id="password" placeholder="Please enter your password to login" name="password">
+	<label for="email">Email:</label>
+	<input required type="email" id="email" name="email" placeholder="Please enter your email to login" required="email"
+		maxlength="50">
+	<br>
+	<br>
+	<button type="submit">Login</button>
+</form>
+
+
+{% if notExistMessage %}
+<p class="error-message">{{ notExistMessage }}</p>
+{% endif %}
+
+
+{% if message %}
+<p class="error-message">{{ message }}</p>
+<button id="signup-btn">{{ button_text }}</button>
+<script>
+	var buttonSignUp = document.getElementById("signup-btn");
+	buttonSignUp.addEventListener("click", function () {
+		location.href = "/teacher/signup";
+	});
+</script>
+{% endif %}
+
+<form id="password-change-form" action="/get_password_change_screen" method="get">
+	<button type="password_change">Forgot Password</button>
+</form>
+</body>
+
+</html>

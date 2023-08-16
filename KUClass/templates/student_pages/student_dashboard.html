@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="/../static/student_dashboard.css">
+    <script src="static/student_dashboard.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="notification">
+            <div class="icon" onclick="window.location.href='/open_news';">
+                <img width="50" height="50" src="{{ url_for('static', filename='images/notification.png') }}"
+                    alt="Notification Icon">
+                <div class="count" id="newsCount">
+                    {% if request.args.get("newsCount") is none %}
+                    {{ 0 }}
+                    {% else %}
+                    {{ request.args.get("newsCount") }}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <h1>Student Dashboard</h1>
+    </div>
+    <div class="container">
+        <div class="group1">
+            <div class="buttons">
+                <form action="/openStudentReservationScreen" method="GET">
+                    <button>Reserve A Classroom</button>
+                </form>
+            </div>
+            <div class="buttons">
+                <form action="/openITReportScreen" method="GET">
+                    <button>Report to IT</button>
+                </form>
+            </div>
+            <div class="buttons">
+                <form action="/reservations" method="GET">
+                    <button>View Reserved Classes</button>
+                </form>
+            </div>
+
+        </div>
+        <div class="group2">
+            <div class="buttons">
+                <form action="/viewInsidesOfClassrooms" method="GET">
+                    <button>View Insides of Classrooms</button>
+                </form>
+            </div>
+            <div class="buttons">
+                <form action="/getFilterAndSearchClassroomsScreen" method="GET">
+                    <button>Filter and Search Classrooms</button>
+                </form>
+            </div>
+            <div class="buttons">
+                <form action="/classrooms" method="GET">
+                    <button>View Classroom Information</button>
+                </form>
+            </div>
+            <div class="buttons">
+                <form action="/exam_schedules">
+                    <button onclick="location.href='/exam_schedules';" name="exam-schedules" value="exam-schedules"
+                        id="exam-schedules">View Exam Schedules</button>
+                </form>
+            </div>
+            <div class="buttons">
+                <form action="/class_schedules">
+                    <button onclick="location.href='/class_schedules';" name="class-schedules" value="class-schedules"
+                        id="class-schedules">View Course Schedules</button>
+                </form>
+            </div>
+            <div class="buttons">
+                <form action="/openMap" method="">
+                    <button>Open Map</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
